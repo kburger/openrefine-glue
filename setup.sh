@@ -17,6 +17,7 @@ mvn --quiet install:install-file -Dfile=/opt/openrefine/build/openrefine-2.7.jar
 cd /tmp/orefine-rdf-extension
 mvn --quiet verify -Dmaven.test.skip=true && mvn --quiet assembly:single
 unzip -q -d /opt/openrefine/extensions/rdf-extension target/orefine-rdf-extension-1.0.0-SNAPSHOT-openrefine-module.zip
+cd -
 
 # build openrefine
 /opt/openrefine/refine build
@@ -31,5 +32,3 @@ rm -rf /opt/openrefine/dist
 rm -rf /opt/openrefine/main/tests
 rm -rf /opt/openrefine/main/webapp/WEB-INF/lib-src
 rm -rf /root/.m2
-
-cd -
